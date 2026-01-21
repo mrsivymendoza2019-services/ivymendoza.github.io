@@ -78,7 +78,24 @@ footer{text-align:center;padding:2rem;opacity:.7}
 }
 </style>
 </head>
+<section id="contact">
+  <h2>Contact Me</h2>
+  <p>Tell me about your project and I’ll reply soon.</p>
 
+  <form action="https://formsubmit.co/YOUR_EMAIL_HERE" method="POST">
+
+    <!-- REQUIRED SETTINGS -->
+    <input type="hidden" name="_subject" value="New message from Ivy’s portfolio">
+    <input type="hidden" name="_captcha" value="false">
+
+    <!-- USER INPUTS -->
+    <input type="text" name="name" placeholder="Your Name" required><br><br>
+    <input type="email" name="email" placeholder="Your Email" required><br><br>
+    <textarea name="message" placeholder="Your Message" required></textarea><br><br>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
 <body>
 
 <div class="toggle" onclick="toggleTheme()">🌙</div>
@@ -166,7 +183,7 @@ footer{text-align:center;padding:2rem;opacity:.7}
     I respond quickly.
   </p>
 
-  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+  <form action="https://formsubmit.co/ivymendoza@gmail.com" method="POST">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
     <textarea name="message" placeholder="How can I help you?" required></textarea>
