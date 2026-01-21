@@ -1,73 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Ivy Mendoza | Virtual Assistant Portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<title>Ivy Mendoza | Virtual Assistant for Growing Businesses</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0f172a;
-      color: #e5e7eb;
-    }
-    header {
-      padding: 3rem 1.5rem;
-      text-align: center;
-      background: linear-gradient(135deg, #020617, #020617);
-    }
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
-    }
-    section {
-      padding: 2rem 1.5rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    .card {
-      background: #020617;
-      padding: 1.5rem;
-      border-radius: 12px;
-      margin-bottom: 1.5rem;
-      box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-    }
-  </style>
+<style>
+:root {
+  --bg:#0f172a; --card:#020617; --text:#e5e7eb; --accent:#38bdf8;
+}
+body.light { --bg:#f8fafc; --card:#fff; --text:#020617; }
+*{box-sizing:border-box}
+body{
+  margin:0;font-family:system-ui,Arial;
+  background:var(--bg);color:var(--text);
+  transition:.3s;
+}
+header{text-align:center;padding:4rem 1.5rem}
+nav{
+  position:sticky;top:0;background:var(--card);
+  display:flex;gap:1.5rem;justify-content:center;
+  padding:1rem;z-index:10
+}
+nav a{color:var(--text);text-decoration:none;font-weight:600}
+nav a:hover{color:var(--accent)}
+.toggle{
+  position:fixed;top:1rem;right:1rem;
+  background:var(--card);padding:.5rem .75rem;
+  border-radius:999px;cursor:pointer
+}
+section{
+  max-width:1000px;margin:auto;padding:3rem 1.5rem;
+  opacity:0;transform:translateY(30px);
+  transition:.6s
+}
+section.show{opacity:1;transform:none}
+.card{
+  background:var(--card);padding:1.75rem;
+  border-radius:16px;margin-bottom:1.75rem;
+  box-shadow:0 20px 40px rgba(0,0,0,.4)
+}
+.hero h1{font-size:2.7rem;margin-bottom:.75rem}
+.hero p{font-size:1.1rem;opacity:.9}
+.cta{
+  margin-top:1.5rem;display:flex;gap:1rem;justify-content:center;flex-wrap:wrap
+}
+button{
+  background:var(--accent);border:none;
+  padding:.85rem 1.4rem;border-radius:10px;
+  font-weight:700;cursor:pointer
+}
+.secondary{background:#1e293b;color:white}
+.projects, .services{
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:1.5rem
+}
+.project, .service{
+  background:var(--card);padding:1.5rem;border-radius:14px;
+  transition:.3s
+}
+.project:hover,.service:hover{
+  transform:translateY(-6px);
+  box-shadow:0 30px 60px rgba(0,0,0,.5)
+}
+.skill{margin-bottom:1rem}
+.bar{background:#1e293b;border-radius:999px;overflow:hidden;height:10px}
+.fill{height:100%;width:0;background:var(--accent);transition:1.5s}
+input,textarea{
+  width:100%;padding:.8rem;margin-bottom:1rem;
+  border-radius:10px;border:none
+}
+footer{text-align:center;padding:2rem;opacity:.7}
+.badge{
+  display:inline-block;background:#1e293b;
+  padding:.3rem .75rem;border-radius:999px;
+  font-size:.85rem;margin-bottom:.75rem
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <h1>Ivy Mendoza 👋</h1>
-  <p>Virtual Assistant • Creative • Tech-Savvy</p>
+<div class="toggle" onclick="toggleTheme()">🌙</div>
+
+<header class="hero">
+  <span class="badge">Virtual Assistant • Client-Focused Support</span>
+  <h1>I help busy business owners reclaim their time</h1>
+  <p>
+    I handle admin tasks, customer communication, and digital workflows
+    so you can focus on growth — not inbox overload.
+  </p>
+
+  <div class="cta">
+    <a href="#contact"><button>🚀 Hire Me</button></a>
+    <a href="resume.pdf" download><button class="secondary">📄 View Resume</button></a>
+  </div>
 </header>
 
-<section>
-  <div class="card">
-    <h2>About Me</h2>
-    <p>
-      I’m a detail-oriented Virtual Assistant with experience in admin support,
-      inbox management, customer service, and creative digital tools.
-    </p>
-  </div>
+<nav>
+  <a href="#results">Results</a>
+  <a href="#services">Services</a>
+  <a href="#skills">Why Me</a>
+  <a href="#contact">Contact</a>
+</nav>
 
-  <div class="card">
-    <h2>Services</h2>
-    <ul>
-      <li>Email & calendar management</li>
-      <li>Customer support</li>
-      <li>Canva design & templates</li>
-      <li>Data entry & research</li>
-    </ul>
-  </div>
-
-  <div class="card">
-    <h2>Contact</h2>
-    <p>Email: yourname@email.com</p>
-    <p>LinkedIn: linkedin.com/in/yourprofile</p>
+<section id="results">
+  <h2>Results I Deliver</h2>
+  <div class="projects">
+    <div class="project">
+      <h3>Inbox Zero System</h3>
+      <p>Reduced response times and cleared high-volume inboxes for clients.</p>
+    </div>
+    <div class="project">
+      <h3>Customer Support Flow</h3>
+      <p>Handled daily customer inquiries with professionalism and empathy.</p>
+    </div>
+    <div class="project">
+      <h3>Creative Asset Support</h3>
+      <p>Designed Canva templates that improved brand consistency.</p>
+    </div>
   </div>
 </section>
+
+<section id="services">
+  <h2>Services</h2>
+  <div class="services">
+    <div class="service">
+      <h3>Administrative Support</h3>
+      <p>Calendar, email, scheduling, and task management — done reliably.</p>
+    </div>
+    <div class="service">
+      <h3>Customer Communication</h3>
+      <p>Professional email, chat, and follow-ups that protect your brand.</p>
+    </div>
+    <div class="service">
+      <h3>Creative & Tech Support</h3>
+      <p>Canva designs, data organization, and tool setup.</p>
+    </div>
+  </div>
+</section>
+
+<section id="skills">
+  <h2>Why Clients Trust Me</h2>
+
+  <div class="skill">
+    <p>Responsiveness & Reliability</p>
+    <div class="bar"><div class="fill" data-width="95%"></div></div>
+  </div>
+
+  <div class="skill">
+    <p>Customer Communication</p>
+    <div class="bar"><div class="fill" data-width="90%"></div></div>
+  </div>
+
+  <div class="skill">
+    <p>Organization & Accuracy</p>
+    <div class="bar"><div class="fill" data-width="92%"></div></div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Let’s Work Together</h2>
+  <p>
+    Tell me about your business and what you need help with.
+    I respond quickly.
+  </p>
+
+  <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" placeholder="How can I help you?" required></textarea>
+    <button type="submit">📩 Send Message</button>
+  </form>
+</section>
+
+<footer>
+  © 2026 Ivy Mendoza • Ready to support your business
+</footer>
+
+<script>
+function toggleTheme(){
+  document.body.classList.toggle("light")
+}
+
+const sections=document.querySelectorAll("section")
+const observer=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){
+      e.target.classList.add("show")
+      e.target.querySelectorAll(".fill").forEach(bar=>{
+        bar.style.width=bar.dataset.width
+      })
+    }
+  })
+},{threshold:.2})
+sections.forEach(s=>observer.observe(s))
+</script>
 
 </body>
 </html>
